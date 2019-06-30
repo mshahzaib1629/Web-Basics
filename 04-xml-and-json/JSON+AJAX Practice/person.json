@@ -1,0 +1,41 @@
+{
+    "people" : [
+    
+        {
+            "name": "shahzaib",
+            "id": 100,
+            "mail": "mshahzaib1629@gmail.com"
+        },
+        {
+            "name": "ali",
+            "id": 101,
+            "mail": "ali@gmail.com"
+        },
+        {
+            "name": "bilal",
+            "id": 102,
+            "mail": "bilal@gmail.com"
+        }
+    
+    ],
+
+    "fazals" : [
+    
+        {
+            "name": "shsahzaib",
+            "id": 100,
+            "mail": "mshahzaib1629@gmail.com"
+        },
+        {
+            "name": "alssssi",
+            "id": 101,
+            "mail": "ali@gmail.com"
+        },
+        {
+            "name": "bissslal",
+            "id": 102,
+            "mail": "bilal@gmail.com"
+        }
+    
+    ]
+}

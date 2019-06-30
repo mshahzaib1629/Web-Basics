@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>AJAX</h2>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+<script>
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById("demo").innerHTML = xhttp.responseText;
+            }
+        };
+        xhttp.open("POST", "file2.html", true);
+
+        // we can also set HTTP headers
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        
+        // data can be passed to send() method
+        xhttp.send("fname=asif&lname=shahzad");
+    }
+</script>
+
+</body>
+</html>

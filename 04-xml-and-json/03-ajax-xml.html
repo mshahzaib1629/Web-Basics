@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>AJAX with XML</h2>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+<script>
+    function loadDoc() {
+        var httpReq = new XMLHttpRequest();
+
+        httpReq.onreadystatechange = function() {
+            if (httpReq.readyState == 4 && httpReq.status == 200) {
+                let catalog = httpReq.responseXML;
+                let booksTable = '<table border=1>' +
+                    '<tr><td>Author</td><td>Title</td><td>Genre</td><td>Price</td><td>Description</td></tr>';                    
+                for(let book of catalog.querySelectorAll('book')) {
+                    booksTable += 
+                    '<tr>' + 
+                        '<td>' + book.getElementsByTagName('author')[0].textContent + '</td>' + 
+                        '<td>' + book.getElementsByTagName('title')[0].textContent + '</td> ' + 
+                        '<td>' + book.getElementsByTagName('genre')[0].textContent + '</td>' +
+                        '<td>' + book.getElementsByTagName('price')[0].textContent + '</td> ' + 
+                        '<td>' + book.getElementsByTagName('description')[0].textContent + '</td> ' +
+                    '</tr>';
+                }
+                booksTable += '</table>'
+                document.getElementById('demo').innerHTML = booksTable;
+            }
+        };
+        httpReq.open("get", "catalog.xml", true);
+        httpReq.send();
+    }
+</script>
+
+</body>
+</html>

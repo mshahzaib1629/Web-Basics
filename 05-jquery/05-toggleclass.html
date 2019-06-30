@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>The jQuery Example</title>
+    <script src="jquery-1.9.1.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+         $("p#pid").click(function () {
+            $(this).toggleClass("red");
+         });
+      });
+   </script>
+   
+   <style>
+      .red { color:red; }
+   </style>
+</head>
+
+<body>
+   <p class = "green">Click following line to see the result</p>
+   <p class = "red" id = "pid">This is first paragraph.</p>
+</body>
+</html>

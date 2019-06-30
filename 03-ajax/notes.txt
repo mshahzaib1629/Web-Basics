@@ -1,0 +1,31 @@
+onreadystatechange
+This property sets the method to be called on every state change.  This is usually your event handler for the asynchronous callback.
+
+readyState.
+This property defines the state of the XmlHttpRequest.  Possible values include:
+0      Request not initialized
+1      Loading. server connection established
+2      Loaded. request received
+3      Interactive. processing request
+4      Complete. request finished and response is ready
+
+
+When sending the XmlHttpRequest, you will check to see if the readyState is 0 or 4, and in your asynchronous callback handler, you will check to see if the readyState is 4.
+
+responseText
+This returns the response from the server as a string.  If you are only returning one value this is the way to go because it is much easier that trying to walk the XML DOM.
+
+responseXML
+This returns the response from the server as an XML document.
+This is the way to go if you need to return multiple values from your AJAX request.
+It require some knowledge of the XML DOM to use, but is quite powerful.
+
+status
+This returns the HTTP status code from the server such as 200 for OK or 404 for not found.
+
+statusText
+This returns a string representation of the HTTP status code such as OK for 200 and Not Found for 404
+
+And that's is for the properties available to you via the XmlHttpRequest object.
+
+See ... another example: at http://www.hackorama.com/ajax/

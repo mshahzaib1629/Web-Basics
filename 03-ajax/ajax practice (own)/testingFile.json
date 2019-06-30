@@ -1,0 +1,8 @@
+{
+    "name":"ali",
+    "age":20,
+    "address": {
+        "streetAddress": "45 C",
+        "town" : "Model Town"
+    }
+}

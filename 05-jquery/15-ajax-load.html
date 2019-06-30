@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>This file1 under jquery</title>
+    <script src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" language="javascript">
+      $(document).ready(function() {
+        $("#driver").click(function(event) {
+          $.ajax({
+            url: "file2.html",                        
+            success: function(data) {
+              $("#stage").html(data);
+            }
+          });
+        });
+
+
+        $("#driver2").click(function(event) {
+          $.get("file2.html", { name: "Alice" }, function(data) {
+            $("#stage").html(data);
+          });
+        });
+        
+
+        $("#driver3").click(function(event){				
+            $.post( 
+               "file2.html",
+               { name: "Alice" },
+               function(data) {
+                  $('#stage').html(data);
+               }
+            );
+            
+         });
+      });
+    </script>
+  </head>
+
+  <body>
+    <p>Click on the button to load result.html file:</p>
+
+    <div id="stage" style="background-color:lightblue;">
+      STAGE
+    </div>
+
+    <input type="button" id="driver" value="Load Data - using AJAX" />
+    <input type="button" id="driver2" value="Load Data - Using get" />
+    <input type="button" id="driver2" value="Load Data - Post" />
+  </body>
+</html>

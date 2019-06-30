@@ -1,0 +1,86 @@
+<html>
+<head>
+    <script language="JavaScript" type="text/javascript">
+
+        /*
+        Get browser specific XmlHttpRequest Object
+        AJAX : Asynchronous JavaScript and XML
+        AJAX is a misleading name. You don't have to understand XML to use AJAX
+
+        * AJAX help to update web page contents asynchronously by fetching data 
+          from server. So we can update parts of the web page, without reloading 
+          the whole page.
+
+          Most of todays' modern web apps make use of AJAX e.g. Google Maps, Gmail, 
+          YouTube, and Facebook */
+
+        function getXmlHttpRequestObject() {
+
+            if (window.XMLHttpRequest) {        // return true fro WebKit based browser e.g. Chrome and Firefox
+
+                return new XMLHttpRequest();
+
+            } else if (window.ActiveXObject) {  // return true only when it runs inside Internet Explorer
+
+                return new ActiveXObject("Microsoft.XMLHTTP"); 
+
+            } else {
+                //Display your error message here and inform the user they might want to upgrade the browser
+                alert("Your browser doesn't support the XmlHttpRequest object.  Better upgrade to Firefox.");
+            }
+        }
+        
+        //Get browser specific XmlHttpRequest object.
+        var httpRequest = getXmlHttpRequestObject();
+
+        //Initiate the asyncronous request.
+
+        function sayHello() {
+
+            // If our XmlHttpRequest object is not in the middle of a request,
+            // start the new asyncronous call.
+
+            if (httpRequest.readyState == 4 || httpRequest.readyState == 0) {
+
+                // Setup the connection as a GET call to file2.html.
+                // True explicity sets the request to asyncronous (default).
+                httpRequest.open("GET", 'file2.html', true); // method, url, async
+
+                //Set the function that will be called when the XmlHttpRequest objects state changes.
+                httpRequest.onreadystatechange = handleSayHello;
+
+                //Make the actual request.
+                httpRequest.send(); // send(string)	Sends the request to the server (used for POST)
+            }
+        }
+
+        //Below function is called, everytime when readyState value change
+
+        function handleSayHello() {
+
+            // Check to see if the XmlHttpRequests state is finished/complete.
+            // At the moment, we are interested only only request completion
+                        
+            if (httpRequest.readyState == 4) {
+
+                //Set the contents of our span element to the result of the asyncronous call.
+                document.getElementById('span_result').innerHTML = httpRequest.responseText;
+            }
+        }
+    </script>
+</head>
+<body>
+
+<!-- Clicking this link initiates the asyncronous request -->
+
+AJAX DEMO <br><br>
+
+<a href="javascript:sayHello();">Say Hello</a><br/>
+
+<!-- used to display the results of the asyncronous request -->
+
+<span id="span_result"></span>
+
+
+</body>
+</html>

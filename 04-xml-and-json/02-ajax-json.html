@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>AJAX with JSON </h2>
+<button type="button" onclick="loadDoc()">Request data</button>
+<div id="demo"></div>
+
+<script>
+    function loadDoc() {
+        var httpReq = new XMLHttpRequest();
+
+        httpReq.onreadystatechange = function() {
+
+            if (httpReq.readyState == 4 && httpReq.status == 200) {
+                let userJson = httpReq.responseText;
+
+                let user = JSON.parse(userJson);
+
+                // lets get some data from object and create a list, to demo
+
+                let listHtml = '<ol>';
+                for(let field in user){
+                    if(typeof user[field] == 'string')
+                    listHtml +=  '<li>' + field + " = " + user[field] + '</li>';
+                }
+                listHtml += '</ol>';
+                document.getElementById('demo').innerHTML = listHtml;
+            }
+        };
+        httpReq.open("get", "user.json", true);
+        httpReq.send();
+    }
+</script>
+
+</body>
+</html>

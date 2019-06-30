@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>
+        Intro to JSON
+    </title>
+</head>
+
+<script>
+        /*
+            Two systems that interact with each other require a format to represent data.
+            There are two commonly used fromat to represent data:
+                1. JSON
+                2. XML
+
+            JSON is widely used in web applications to exchange and store data.
+            JSON is language and platform independent format.
+            JSON is human readable and understandable too.
+            All language have libraries to generate and parse JSON. So, for two systems to 
+            communicate with each other using JSON, its not required, both shall follow same
+            programming language. Two programs written in different language can interact with 
+            each other using common formate to data representation.            
+        
+            JSON - JavaScript Object Notation
+
+            JSON is text, that is written using JS Object Notation
+            We can convert Java Script object to JSON. see objectToJson method defined below.
+            And JSON back to JavaScript object. see jsonToObject method
+
+        */
+        </script>
+
+<body>
+    <a href="#" onclick="objectToJSON()">object to JSON</a> <br>
+    <a href="#" onclick="jsonToObject()">JSON to object</a> <br><br>
+    <a href="#" onclick="parseArray()">array test </a>
+    <br> <br>
+    <div id='demo'></div>
+</body>
+
+<script>
+    function objectToJSON(){
+        let user = { 
+            name: "Asif Shahzad", 
+            email: "asifsh7@gmail.com", 
+            age: 36, 
+            city: "Lahore",
+            courses : [
+                "Web", 
+                "OOP"
+            ],
+            address : {
+                streetAddress : "100 A",
+                town : "Model Town"
+            }
+        };
+        
+        let userJson = JSON.stringify(user);
+        document.getElementById('demo').innerHTML = userJson; // we can send this string to server using AJAX or standard HTTP request.
+    }
+    
+    function jsonToObject() {
+        // assume you got below string from server, as response of AJAX
+        let userJson = '{"name":"Asif Shahzad","email":"asifsh7@gmail.com","age":36,"city":"Lahore","courses":["Web", "OOP"], "address":{"streetAddress":"100 A","town":"Model Town"}}';
+
+        let user = JSON.parse(userJson);
+        document.getElementById('demo').innerHTML = user.name + " - " + user.courses[0]  + " - Town " + user.address.town;        
+
+    }
+ 
+    /*
+    From above, you can see some rules followed by JSON
+        1. data is in name / value pair
+        2. each data element is separated by comma
+        3. {} are used to define object
+        4. [] are used to define array
+
+    JSON, seems identical to JavaScript objects, but there are some differences:
+
+        1. JSON data key must be a string enclosed in double quotes. not in single quotes (as in JS)
+        2. string value must be written in double quote. not in single quote (as in JS)
+        3. JSON value shall belong string, number, object, array, boolean or null type only.
+           function, date, and undefined can't be used in JSON        
+    */
+
+    //  JSON data may be an array only. when its parsed, it would return a JavaScript array. not an object
+
+    function parseArray() {        
+        let subjectsJson = '["Web", "OOP"]';
+        let subjects = JSON.parse(subjectsJson);
+        document.getElementById('demo').innerHTML = subjects[1];
+    }
+
+</script>
+</html>

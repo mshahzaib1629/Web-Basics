@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            How to make Synchronous AJAX call
+        </title>
+    </head>
+<body>
+
+<h2>How to make Synchronous AJAX call</h2>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+<script>
+    function loadDoc() {
+        /* below line is not safe, as it would not work on IE. */
+        /* used only to discuss some other concept */
+        var xhttp = new XMLHttpRequest(); 
+
+        // false means, we are making synchronous request.
+        xhttp.open("GET", "file2.html", false);
+
+        // send() method would return after the AJAX request has completed and response is ready
+        xhttp.send();
+
+        // incase of asynchronous requests, we do not need to define handler for onreadystatechange 
+        // we can safely define the handler, as defined below, after calling send() method.
+
+        document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+</script>
+
+</body>
+</html>

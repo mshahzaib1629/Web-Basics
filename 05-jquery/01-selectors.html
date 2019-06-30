@@ -1,0 +1,50 @@
+<html>
+   <head>
+      <title>The jQuery Example</title>
+      <script src="jquery-1.9.1.min.js"></script>
+
+      <script type="text/javascript" language = "javascript">
+      // JQuery is JS library that simplifies JS programming
+      // Used to make HTML/CSS/DOM Manipulation 
+      // Make AJAX calls easy
+      // Provides Event Handling
+      // Its Cross Browser
+      // Many Animation Utilities and Plugins
+
+      // Basic syntax is:
+      // $(selector).action();
+
+      // $("p").click();
+      // $ is alias to jQuery object
+      // (selector) - "query (or find)" HTML elements
+      // action() to be performed on the element(s)
+
+      // Is DOM ready?
+      // $(document).ready(function(){});
+      // $(function(){}) // same but short
+
+         $(document).ready(function() {
+            $("p").css("background-color", "yellow")
+            $('#myid').css('color', 'red')
+         });
+         
+        // Selectors
+        // Universal Selector i.e. *
+        // class based selector: single and multiple
+        // element selector, single and multiple
+        // first element e.g. p:first, last element
+        // any child. immediate child
+        // even and odd elements e.g. tr:even, tr:odd
+        // attribute selector [href] .. all elements with attributes a href
+        // specific type of element with attribute value  e.g. a[target='_blank']        
+      </script>
+   </head>
+	
+   <body>
+      <div>
+         <p class = "myclass">This is a paragraph.</p>
+         <p id = "myid">This is second paragraph.</p>
+         <p>This is third paragraph.</p>
+      </div>
+   </body>
+</html>

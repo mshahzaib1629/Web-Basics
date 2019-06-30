@@ -1,0 +1,35 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Option with Custom Value</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+
+    <h1>Registration Form</h1>
+    <form action="register.php" method="GET">
+
+        <div><label>First Name</label>
+            <input type="text" name="first-name"/>
+        </div>
+
+        <div><label>City</label>
+            <select name="city">
+                <option>Select</option>
+                <option value="1">Lahore</option>
+                <option value="2">Karachi</option>
+                <option value="3">Islamabad</option>
+            </select>
+        </div>
+
+        <div><label>Comments</label>
+            <textarea name="comments" rows="5"></textarea>
+        </div>
+
+        <input type="submit">
+    </form>
+
+
+    </body>
+    </html>

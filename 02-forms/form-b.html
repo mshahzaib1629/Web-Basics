@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 5 Input Types, Required Field</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<h1>Registration Form</h1>
+<form action="register.php" method="GET">
+
+    <div><label>First Name</label>
+        <input type="text" name="first-name" value="Ali"/>
+    </div>
+
+    <div><label>Password</label>
+        <input type="password" name="password"/> <br/>
+    </div>
+
+    <div> <label>Email</label>
+        <input type="email" name="email" placeholder="Email"/> <br/>
+    </div>
+
+    <div><label>Blog URL</label>
+        <input type="url" name="blog_url"/> <br/>
+    </div>
+
+    <div><label>Data of Birth</label>
+        <input type="date" name="date-of-birth" required="required" />
+    </div>
+
+    <input type="submit"/>
+
+</form>
+
+</body>
+</html>

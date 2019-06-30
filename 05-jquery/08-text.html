@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>The jQuery Example</title>
+    <script src="jquery-1.9.1.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+         var content = $("p#pid1").text();
+         $("#pid2").html(content);
+      });
+   </script>
+ 
+   <style>
+      .red { color:red; }
+      .green { color:green; }
+   </style>
+</head>
+
+<body>
+   <p class = "green" id = "pid1">This is <i>first paragraph</i>.</p>
+   <p class = "red" id = "pid2">This is second paragraph.</p>
+</body>
+</html>

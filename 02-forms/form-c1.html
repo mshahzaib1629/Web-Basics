@@ -1,0 +1,35 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Radio and Checkbox</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+
+    <h1>Registration Form</h1>
+    <form action="register.php" method="GET">
+
+        <div><label>First Name</label>
+            <input type="text" name="first-name"/>
+        </div>
+
+        <div> <label>Gender</label>
+            <input type="radio" name="gender" value="Male"/> Male
+            <input type="radio" name="gender" value="Female"/> Female
+        </div>
+
+        <div><label>Courses</label>
+            <input type="checkbox" name="course" value="OOP"/> OOP
+            <input type="checkbox" name="course" value="DB"/> DB
+            <input type="checkbox" name="course" value="Web"/> Web
+            <input type="checkbox" name="course" value="Web"/> OS
+        </div>
+
+        <input type="submit">
+
+    </form>
+
+
+    </body>
+    </html>

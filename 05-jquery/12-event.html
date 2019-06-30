@@ -1,0 +1,116 @@
+<!--
+jquery selectors
+jquery even handlers
+firing events programatically
+-->
+<html>
+  <head>
+    <title>This file1 under jquery</title>
+    <script src="jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+      .alpha {
+        font-family: arial;
+        font-size: 20px;
+        color: #c71585;
+      }
+    </style>
+    <script>
+   
+
+      $(document).ready(function() {
+
+
+        // Common functions to apply, once some element is selected
+        // click
+        // dblclick
+        // mouseenter and mouseleave
+        // mousedown and mouseup
+        // hover ... mouseenter + mouseleave ... handler take two params
+
+        $("p").mouseenter(function() {
+          $(this).css("font-weight", "bold");
+        });
+
+        $("p").mouseleave(function() {
+          $(this).css("font-weight", "normal");
+        });
+
+        $("a").hover(function() {}, function() {});        
+      });
+
+
+      $(function() {
+        // Form events
+        // submit ... for form only. submit() and submit(function) difference
+        // change ... for input, textarea, and select ... change and change(function)
+        // focus
+        // blur
+
+        $("#regForm").submit(function() {
+          alert('form submitted.');
+        });
+
+        $("input").focus(function() {
+          $(this).css("background-color" , "#eee");
+        });
+
+        $("#email").blur(function() {});
+      });
+
+
+      // other keyboard and window events .. do yourself
+      
+      $(document).ready(function() {
+
+        $("#hideAll").click(function() {          
+          $("p").hide();
+        });
+
+        $("tr:odd").css("background-color", "red");
+        $("tr:even").css("background-color", "yellow");
+
+        // When user click on paragraph, lets hide it
+        // $("p").click(function () {
+        //     $(this).hide(); // "this" is decided at runtime
+        // });
+
+        // $("p").dblclick(function () {
+        //     alert("You doubled clicked");
+        // });
+
+        // $("p").mouseenter(function () {
+        //     alert("mouse entered into a para");
+        // });
+        
+        // $("p").mouseleave(function () {
+        //     alert("Mouse just left a para");
+        // });
+      });
+
+    </script>
+  </head>
+
+  <body>
+    <p class="alpha">
+      JQuery is Java Script library that greatly simplifies the DOM
+      manipulation, event handling, and doing other dynamic tasks. It also
+      support AJAX and provides some utilities we often need in web
+      applications. Jquery also has plugins ... for different things.
+    </p>
+
+    <p id="myPara">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat
+    </p>
+
+    <input type="button" onclick="$('#myPara').hide()" value="Click Me to hide myPara" />
+
+    <input type="button" value="All Paras" id="hideAll" />
+  </body>
+</html>
+
+<?php
+
+?>

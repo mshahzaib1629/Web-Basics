@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>The jQuery Example</title>
+    <script src="jquery-1.9.1.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        var title = $("em").attr("title");
+        $("#divid").text(title);
+      });
+
+      $(document).ready(function() {
+        $("#myimg").attr("src", "jquery_200x200.jpg");
+      });
+    </script>
+    
+  </head>
+
+  <body>
+    <div>
+      <em title="Bold and Brave">This is first paragraph.</em>
+      <p id="myid">This is second paragraph.</p>
+      <div id="divid"></div>
+    </div>
+
+    <div>
+      <img id="myimg" src="" alt="Sample image" />
+    </div>
+  </body>
+</html>

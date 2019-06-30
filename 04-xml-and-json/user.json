@@ -1,0 +1,14 @@
+{
+    "name": "Asif Shahzad",
+    "email": "asifsh7@gmail.com",
+    "age": 36,
+    "city": "Lahore",
+    "courses": [
+      "Web",
+      "OOP"
+    ],
+    "address": {
+      "streetAddress": "100 A",
+      "town": "Model Town"
+    }
+  }

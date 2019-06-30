@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>The jQuery Example</title>
+    <script src="jquery-1.9.1.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        var value = $("#name").val();
+        $("p#pid2").text(value);
+
+        $("#name").blur(function() {
+          $("p#pid2").text($("#name").val());
+          $('#second').val($("#name").val());
+        });
+      });
+    </script>
+    
+    <style>
+      .red {
+        color: red;
+      }      
+    </style>
+  </head>
+
+  <body>
+    Name : <input type="text" value="Alice" id="name" name="name" /> 
+
+    <input type="text" placeholder="Second" id='second'/>
+    
+    <p class="red" id="pid2">This is first para.</p>
+  </body>
+</html>
